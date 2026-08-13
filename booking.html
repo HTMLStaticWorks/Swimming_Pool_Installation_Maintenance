@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AquaPro Pools | Book Site Visit &amp; Consultation</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dark-mode.css">
+  <link rel="stylesheet" href="css/rtl.css">
+  <link rel="icon" type="image/svg+xml" href="assets/images/branding/favicon.svg">
+</head>
+<body>
+
+  <div id="global-header"></div>
+
+  <main>
+    <!-- Section 1: Hero -->
+    <section class="section-padding position-relative text-center d-flex align-items-center reveal" style="min-height: 40vh; background-image: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.9)), url('https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=1600&q=80'); background-size: cover; background-position: center;">
+      <div class="container position-relative z-1 py-5">
+        <h1 class="display-4 fw-bold text-white mb-3">Book a Site Visit</h1>
+        <p class="lead text-white-50 mx-auto" style="max-width: 600px;">Schedule a professional on-site pool consultation. Our engineers will assess your backyard layout.</p>
+      </div>
+    </section>
+
+    <!-- Section 2: Booking Form Workflow -->
+    <section class="section-padding bg-surface" style="margin-top: -60px; position: relative; z-index: 10;">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10 reveal">
+            <div class="premium-card p-4 p-md-5">
+              <form id="bookingForm" class="needs-validation" novalidate>
+                
+                <!-- Step 1: Personal Details -->
+                <h4 class="mb-4 text-primary border-bottom pb-2">1. Personal Details</h4>
+                <div class="row g-3 mb-5">
+                  <div class="col-md-6">
+                    <label class="form-label fw-bold">Full Name</label>
+                    <input type="text" class="form-control form-control-lg" required>
+                    <div class="invalid-feedback">Please enter your full name.</div>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label fw-bold">Email Address</label>
+                    <input type="email" class="form-control form-control-lg" required>
+                    <div class="invalid-feedback">Please enter a valid email.</div>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label fw-bold">Phone Number</label>
+                    <input type="tel" class="form-control form-control-lg" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label fw-bold">Desired Pool Type</label>
+                    <select class="form-select form-select-lg" required>
+                      <option value="">Select type</option>
+                      <option value="concrete">Concrete / Shotcrete Pool</option>
+                      <option value="fiberglass">Fiberglass Pool</option>
+                      <option value="vinyl">Vinyl Liner Pool</option>
+                      <option value="consultation">Not Sure / Consultation Required</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Step 2: Project Details -->
+                <h4 class="mb-4 text-primary border-bottom pb-2">2. Project Details</h4>
+                <div class="row g-3 mb-5">
+                  <div class="col-md-6">
+                    <label class="form-label fw-bold">Requested Service</label>
+                    <select class="form-select form-select-lg" required>
+                      <option value="">Select service</option>
+                      <option value="construction">Custom Pool Design &amp; Construction</option>
+                      <option value="maintenance">Weekly Maintenance Package Setup</option>
+                      <option value="repair">Equipment Inspection / Repair</option>
+                      <option value="renovation">Pool Renovation / Resurfacing</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label fw-bold">Backyard Access Type</label>
+                    <select class="form-select form-select-lg" required>
+                      <option value="">Select access</option>
+                      <option value="wide">Wide Access (Above 8ft width)</option>
+                      <option value="narrow">Narrow Access (Under 8ft width)</option>
+                      <option value="none">No Side Access (Requires crane/etc)</option>
+                    </select>
+                  </div>
+                  <div class="col-md-12">
+                    <label class="form-label fw-bold">Preferred Consultant (Optional)</label>
+                    <select class="form-select form-select-lg">
+                      <option value="">Any Available Consultant</option>
+                      <option value="john">John Smith (APSP Designer)</option>
+                      <option value="sarah">Sarah Jenkins (CPO Technician)</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Step 3: Date & Time -->
+                <h4 class="mb-4 text-primary border-bottom pb-2">3. Select Date &amp; Time</h4>
+                <div class="row g-3 mb-5">
+                  <div class="col-md-6">
+                    <label class="form-label fw-bold">Date</label>
+                    <input type="date" class="form-control form-control-lg" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label fw-bold">Time Slot</label>
+                    <select class="form-select form-select-lg" required>
+                      <option value="">Select time</option>
+                      <option value="09:00">09:00 AM - 11:00 AM</option>
+                      <option value="12:00">12:00 PM - 02:00 PM</option>
+                      <option value="15:00">03:00 PM - 05:00 PM</option>
+                    </select>
+                  </div>
+                  <div class="col-md-12">
+                    <label class="form-label fw-bold">Additional Notes &amp; Site Address</label>
+                    <textarea class="form-control" rows="3" placeholder="Please enter your site address and any specific layout details..."></textarea>
+                  </div>
+                </div>
+
+                <!-- Step 4: Submit -->
+                <div class="text-center pt-3 border-top">
+                  <button type="submit" class="btn-primary-brand btn-lg px-5">Request Site Consultation</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Client-side Validation Script for Booking -->
+    <script>
+      (function () {
+        'use strict'
+        var forms = document.querySelectorAll('.needs-validation')
+        Array.prototype.slice.call(forms)
+          .forEach(function (form) {
+            form.addEventListener('submit', function (event) {
+              if (!form.checkValidity()) {
+                event.preventDefault()
+                event.stopPropagation()
+              } else {
+                event.preventDefault();
+                alert('Site visit request successfully submitted! (Demo)');
+                form.reset();
+                form.classList.remove('was-validated');
+                return;
+              }
+              form.classList.add('was-validated')
+            }, false)
+          })
+      })()
+    </script>
+  </main>
+  
+  <div id="global-footer"></div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
