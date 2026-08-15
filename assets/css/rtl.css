@@ -1,0 +1,54 @@
+/* 
+=========================================================
+  HYDROWAVE — RTL OVERRIDES
+=========================================================
+*/
+
+html[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+html[dir="rtl"] .text-center {
+  text-align: center;
+}
+
+
+/* Fix drawer side */
+html[dir="rtl"] .drawer {
+  right: auto;
+  left: -100%;
+  transition: left 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+html[dir="rtl"] .drawer.active {
+  left: 0;
+}
+
+/* Adjust margins and paddings for logical properties fallback */
+html[dir="rtl"] .ml-auto {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+html[dir="rtl"] .mr-auto {
+  margin-right: 0;
+  margin-left: auto;
+}
+
+
+/* Directional icons flip. Both members of a pair must be listed —
+   flipping only the "right" ones leaves prev/next both pointing the same way. */
+html[dir="rtl"] .ph-caret-right,
+html[dir="rtl"] .ph-caret-left,
+html[dir="rtl"] .ph-arrow-right,
+html[dir="rtl"] .ph-arrow-left {
+  transform: rotate(180deg);
+}
+
+/* Adjust form inputs if they have icons inside */
+html[dir="rtl"] .form-group {
+  text-align: right;
+}
+
+
+/* Grid columns flip automatically in RTL when using CSS Grid without fixed positioning */

@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AquaVista | Maintenance &amp; Design Blog</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/aquavista-logo.png">
+  <meta name="theme-color" content="#0ea5e9">
+  <meta name="description" content="Expert pool maintenance tips, chemical water balancing guides, and custom design inspiration from the AquaVista engineering team.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+
+  <style>
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: var(--space-5);
+    }
+
+    .blog-card {
+      background: var(--bg-card);
+      border-radius: var(--radius-soft);
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid var(--border-color);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .blog-img {
+      width: 100%;
+      aspect-ratio: 16/10;
+      object-fit: cover;
+    }
+
+    .blog-content {
+      padding: var(--space-4);
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    /* Every text block below is a fixed-line box, so the meta, title,
+       excerpt and link all start and end on the same line across cards. */
+    .blog-meta {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: var(--space-2);
+      text-align: center;
+      line-height: 1.4;
+      width: 100%;
+      min-height: 1.4em;
+      /* one line */
+    }
+
+    .blog-tag {
+      color: var(--color-accent);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .blog-title {
+      font-size: 1.25rem;
+      line-height: 1.3;
+      margin-bottom: var(--space-2);
+      width: 100%;
+      /* Reserve two lines and cap at two, so a one-line title
+         still pushes the excerpt down to the same place. */
+      min-height: calc(1.3em * 2);
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      line-clamp: 2;
+      overflow: hidden;
+    }
+
+    .blog-excerpt {
+      color: var(--text-muted);
+      margin-bottom: var(--space-4);
+      flex-grow: 1;
+      text-align: justify;
+      text-align-last: center;
+      width: 100%;
+      line-height: 1.6;
+      min-height: calc(1.6em * 3);
+      /* three lines */
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+      line-clamp: 3;
+      overflow: hidden;
+    }
+
+    .blog-read-more {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      font-weight: 500;
+      color: var(--text-main);
+    }
+
+    .blog-read-more:hover {
+      color: var(--color-accent);
+    }
+
+    /* --- FAQs --- */
+    .faq-section {
+      background:
+        radial-gradient(34rem 20rem at 85% 0%, var(--color-sage-soft), transparent 62%),
+        var(--bg-secondary);
+      border-block: 1px solid var(--border-color);
+    }
+
+    .faq-list {
+      max-width: 760px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+    }
+
+    /* <details> rather than scripted panels — collapsing works without JS,
+       and screen readers get the expanded state for free. */
+    .faq-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-xs);
+      overflow: hidden;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .faq-item:hover {
+      border-color: var(--border-strong);
+    }
+
+    .faq-item[open] {
+      border-color: var(--color-accent-ring);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .faq-q {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-3);
+      padding: var(--space-3);
+      cursor: pointer;
+      list-style: none;
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      color: var(--text-main);
+      text-align: start;
+    }
+
+    /* Hide the native disclosure triangle */
+    .faq-q::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-q::marker {
+      content: '';
+    }
+
+    .faq-q:hover {
+      color: var(--color-accent);
+    }
+
+    .faq-icon {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--color-accent-soft);
+      color: var(--color-accent);
+      font-size: 0.95rem;
+      transition: transform 0.35s var(--ease-out);
+    }
+
+    .faq-item[open] .faq-icon {
+      transform: rotate(180deg);
+    }
+
+    .faq-a {
+      padding: 0 var(--space-3) var(--space-3);
+      color: var(--text-muted);
+      font-size: 0.94rem;
+      line-height: 1.65;
+      animation: faqReveal 0.35s var(--ease-out);
+    }
+
+    .faq-a p+p {
+      margin-top: var(--space-2);
+    }
+
+    @keyframes faqReveal {
+      from {
+        opacity: 0;
+        transform: translateY(-6px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .faq-a {
+        animation: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <a href="index.html" class="logo"><img src="assets/images/aquavista-logo.png" alt="AquaVista" style="height: var(--logo-height, 58px); width: auto; display: block;"></a>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="home2.html" class="nav-link">Home 2</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="journal.html" class="nav-link active">Journal</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+          <button class="icon-btn theme-toggle" aria-label="Toggle Theme"><i class="ph ph-moon"></i></button>
+          <button class="icon-btn rtl-toggle" aria-label="Toggle RTL"><i class="ph ph-arrows-left-right"></i></button>
+          <a href="login.html" class="btn btn-outline" style="padding: 8px 20px;">Login</a>
+        </div>
+        <button class="hamburger" aria-label="Open Menu"><i class="ph ph-list"></i></button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- DRAWER -->
+  <div class="drawer-overlay"></div>
+  <div class="drawer">
+    <div class="drawer-header">
+      <div class="logo"><img src="assets/images/aquavista-logo.png" alt="AquaVista" style="height: var(--logo-height, 58px); width: auto; display: block;"></div>
+      <button class="drawer-close" aria-label="Close Menu"><i class="ph ph-x"></i></button>
+    </div>
+    <div class="drawer-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="home2.html" class="nav-link">Home 2</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="journal.html" class="nav-link active">Journal</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+    <div class="drawer-actions">
+      <div class="nav-actions">
+        <button class="icon-btn theme-toggle" aria-label="Toggle Theme"><i class="ph ph-moon"></i></button>
+        <button class="icon-btn rtl-toggle" aria-label="Toggle RTL"><i class="ph ph-arrows-left-right"></i></button>
+      </div>
+      <a href="login.html" class="btn btn-outline">Login</a>
+    </div>
+  </div>
+
+  <main>
+    <div class="page-header page-hero-photo">
+      <div class="page-hero-media" aria-hidden="true">
+        <img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?q=80&w=1200" alt="">
+      </div>
+      <div class="container">
+        <span class="eyebrow">Journal</span>
+        <h1>The <span class="text-gradient">Maintenance Blog</span></h1>
+        <p class="lead">Pool care education, structural design deep-dives, and customer backyard transformations.</p>
+      </div>
+    </div>
+
+    <section>
+      <div class="container">
+        <div class="blog-grid">
+
+          <!-- Article 1 -->
+          <article class="blog-card animate-on-scroll">
+            <a href="journal-single.html">
+              <img src="https://images.unsplash.com/photo-1518156677180-95a2893f3e9f?q=80&w=800" alt="Pool water testing" class="blog-img"
+                width="800" height="500" loading="lazy">
+            </a>
+            <div class="blog-content">
+              <div class="blog-meta">
+                <span class="blog-tag">Maintenance</span>
+                <span>•</span>
+                <span>Oct 12, 2026</span>
+              </div>
+              <h3 class="blog-title"><a href="journal-single.html">The Ultimate Weekly Chemistry Guide</a></h3>
+              <p class="blog-excerpt">Discover how to measure and balance your pool pH, chlorine, and alkalinity to keep water crystal clear.</p>
+              <a href="journal-single.html" class="blog-read-more">Read Article</a>
+            </div>
+          </article>
+
+          <!-- Article 2 -->
+          <article class="blog-card animate-on-scroll delay-1">
+            <a href="journal-single.html">
+              <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?q=80&w=800" alt="Luxury fiberglass pool" class="blog-img" width="800"
+                height="500" loading="lazy">
+            </a>
+            <div class="blog-content">
+              <div class="blog-meta">
+                <span class="blog-tag">Pool Shells</span>
+                <span>•</span>
+                <span>Oct 05, 2026</span>
+              </div>
+              <h3 class="blog-title"><a href="journal-single.html">Fiberglass vs. Concrete Pool Shells</a></h3>
+              <p class="blog-excerpt">Comparing installation speed, lifetime durability, and maintenance costs to help you choose the right shell.</p>
+              <a href="journal-single.html" class="blog-read-more">Read Article</a>
+            </div>
+          </article>
+
+          <!-- Article 3 -->
+          <article class="blog-card animate-on-scroll delay-2">
+            <a href="journal-single.html">
+              <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=800" alt="Sand filtration system" class="blog-img" width="800" height="500"
+                loading="lazy">
+            </a>
+            <div class="blog-content">
+              <div class="blog-meta">
+                <span class="blog-tag">Pool Equipment</span>
+                <span>•</span>
+                <span>Sep 28, 2026</span>
+              </div>
+              <h3 class="blog-title"><a href="journal-single.html">Debunking Common Sand Filter Myths</a></h3>
+              <p class="blog-excerpt">Do sand filters really filter worse than cartridges? We break down filter media types and maintenance schedules.</p>
+              <a href="journal-single.html" class="blog-read-more">Read Article</a>
+            </div>
+          </article>
+
+          <!-- Article 4 -->
+          <article class="blog-card animate-on-scroll delay-3">
+            <a href="journal-single.html">
+              <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=800" alt="Backyard excavator" class="blog-img"
+                width="800" height="500" loading="lazy">
+            </a>
+            <div class="blog-content">
+              <div class="blog-meta">
+                <span class="blog-tag">Site Prep</span>
+                <span>•</span>
+                <span>Sep 19, 2026</span>
+              </div>
+              <h3 class="blog-title"><a href="journal-single.html">How to Assess Your Yard Access in 60 Seconds</a></h3>
+              <p class="blog-excerpt">Gate widths, fence openings, and yard slopes — here's how our excavators assess accessibility before dig day.</p>
+              <a href="journal-single.html" class="blog-read-more">Read Article</a>
+            </div>
+          </article>
+
+          <!-- Article 5 -->
+          <article class="blog-card animate-on-scroll delay-4">
+            <a href="journal-single.html">
+              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800" alt="Green pool water" class="blog-img"
+                width="800" height="500" loading="lazy">
+            </a>
+            <div class="blog-content">
+              <div class="blog-meta">
+                <span class="blog-tag">Pool Care</span>
+                <span>•</span>
+                <span>Sep 11, 2026</span>
+              </div>
+              <h3 class="blog-title"><a href="journal-single.html">What a Green Pool Actually Means</a></h3>
+              <p class="blog-excerpt">Sudden algae blooms and cloudy water point to one thing. Here is how weekly clarifiers and algaecides fix it.</p>
+              <a href="journal-single.html" class="blog-read-more">Read Article</a>
+            </div>
+          </article>
+
+          <!-- Article 6 -->
+          <article class="blog-card animate-on-scroll delay-5">
+            <a href="journal-single.html">
+              <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=800" alt="Modern pool automation" class="blog-img"
+                width="800" height="500" loading="lazy">
+            </a>
+            <div class="blog-content">
+              <div class="blog-meta">
+                <span class="blog-tag">Equipment</span>
+                <span>•</span>
+                <span>Sep 02, 2026</span>
+              </div>
+              <h3 class="blog-title"><a href="journal-single.html">Automated Water Care Without the Stress</a></h3>
+              <p class="blog-excerpt">Robotic cleaners, salt-water chlorinators, and smart pumps can share a system — as long as they are plumbed right.</p>
+              <a href="journal-single.html" class="blog-read-more">Read Article</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQs -->
+    <section class="faq-section">
+      <div class="container">
+        <div class="section-title animate-on-scroll">
+          <span class="eyebrow">Good to know</span>
+          <h2>Frequently asked</h2>
+          <p>How the blog works, and how to get an answer about your own pool project.</p>
+        </div>
+
+        <div class="faq-list animate-on-scroll delay-1">
+
+          <details class="faq-item">
+            <summary class="faq-q">
+              Are these articles reviewed by a professional?
+              <span class="faq-icon"><i class="ph ph-caret-down"></i></span>
+            </summary>
+            <div class="faq-a">
+              <p>Yes. Every piece is written by our civil engineering and water care team, and reviewed by licensed builders before going live. Where a claim comes from a specific test, we link the specifications sheet.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-q">
+              Will you tell me to buy something in every post?
+              <span class="faq-icon"><i class="ph ph-caret-down"></i></span>
+            </summary>
+            <div class="faq-a">
+              <p>No. Plenty of our advice costs nothing — vacuuming leaves, keeping gate access clear, or checking pH balances weekly.</p>
+              <p>When we do mention an AquaVista product it's because it fits the point being made, and we'll happily name the specifications so you can find it elsewhere.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-q">
+              Can I ask a question or suggest a topic?
+              <span class="faq-icon"><i class="ph ph-caret-down"></i></span>
+            </summary>
+            <div class="faq-a">
+              <p>Please do. Send it through the <a href="contact.html" class="text-accent">contact form</a> and an advisor will reply directly — usually within two working days. The questions we get asked most often become the next articles.</p>
+            </div>
+          </details>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="logo"><img src="assets/images/aquavista-logo.png" alt="AquaVista" style="height: var(--logo-height, 58px); width: auto; display: block;"></a>
+          <p class="text-muted" style="max-width: 300px;">
+            Bespoke fiberglass and custom concrete swimming pool design, excavation, and automated maintenance services.
+          </p>
+          <div class="footer-social">
+            <a href="#" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
+            <a href="#" aria-label="TikTok"><i class="ph ph-tiktok-logo"></i></a>
+            <a href="#" aria-label="Pinterest"><i class="ph ph-pinterest-logo"></i></a>
+            <a href="contact.html" aria-label="Email"><i class="ph ph-envelope-simple"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Packages</h4>
+          <div class="footer-links">
+            <a href="services.html">All Services</a>
+            <a href="services.html?category=shells">Pool Shells</a>
+            <a href="services.html?category=excavations">Site Preparation</a>
+            <a href="services.html?category=equipment">Pool Equipment</a>
+            <a href="services.html?category=service">Maintenance Care</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Discover</h4>
+          <div class="footer-links">
+            <a href="about.html">Our Story</a>
+            <a href="journal.html">Maintenance Blog</a>
+            <a href="services.html#consultation">Yard Consultation</a>
+            <a href="about.html">Water Chemistry Guide</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Support</h4>
+          <div class="footer-links">
+            <a href="contact.html">Contact Us</a>
+            <a href="contact.html">Terms &amp; Disclaimers</a>
+            <a href="login.html">Your Account</a>
+            <a href="register.html">Create Account</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 AquaVista. All rights reserved.</p>
+        <p>Crafting backyard resorts with civil engineering precision.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

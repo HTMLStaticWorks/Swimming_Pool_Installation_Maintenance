@@ -1,52 +1,1146 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light" dir="ltr">
+<html lang="en" dir="ltr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Premium Swimming Pool Installation &amp; Maintenance Services. Custom pool designs, weekly maintenance packages, and chemical supplies.">
-  <title>AquaPro Pools | Custom Pool Installation &amp; Maintenance</title>
-  
-  <!-- Font & Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
-  <!-- Bootstrap 5 CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/dark-mode.css">
-  <link rel="stylesheet" href="css/rtl.css">
-  <link rel="icon" type="image/svg+xml" href="assets/images/branding/favicon.svg">
+  <title>AquaVista | Premium Swimming Pool Installation &amp; Maintenance</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/aquavista-logo.png">
+  <meta name="theme-color" content="#0ea5e9">
+  <meta name="description"
+    content="AquaVista provides bespoke fiberglass and custom concrete swimming pool design, excavation, installation, and weekly maintenance services.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+
+  <style>
+    /* =====================================================
+      HOME PAGE
+    ===================================================== */
+    .hero-home {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      padding: calc(76px + var(--space-6)) 0 var(--space-8);
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: var(--space-6);
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-content {
+      text-align: center;
+    }
+
+    .hero-content h1 {
+      margin-bottom: var(--space-3);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: var(--space-2);
+      margin-top: var(--space-4);
+    }
+
+    .hero-trust {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: var(--space-3);
+      margin-top: var(--space-5);
+      padding-top: var(--space-4);
+      border-top: 1px solid var(--border-color);
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.87rem;
+      color: var(--text-muted);
+    }
+
+    .trust-item i {
+      color: var(--color-accent);
+      font-size: 1.2rem;
+    }
+
+    /* Hero visual */
+    .hero-visual {
+      position: relative;
+    }
+
+    .hero-frame {
+      position: relative;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      aspect-ratio: 4 / 5;
+      box-shadow: var(--shadow-lift);
+      border: 1px solid var(--border-color);
+    }
+
+    .hero-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-chip {
+      position: absolute;
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 18px;
+      border-radius: var(--radius-soft);
+      background: var(--glass-bg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-hover);
+      font-size: 0.85rem;
+    }
+
+    .hero-chip strong {
+      display: block;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .hero-chip span {
+      color: var(--text-muted);
+      font-size: 0.78rem;
+    }
+
+    .hero-chip i {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: var(--color-accent-soft);
+      color: var(--color-accent);
+      font-size: 1.2rem;
+    }
+
+    .chip-top {
+      top: 8%;
+      inset-inline-start: -6%;
+    }
+
+    .chip-bottom {
+      bottom: 8%;
+      inset-inline-end: -6%;
+    }
+
+    /* Marquee trust bar */
+    .marquee {
+      overflow: hidden;
+      border-block: 1px solid var(--border-color);
+      background: var(--bg-secondary);
+      padding: var(--space-2) 0;
+    }
+
+    .marquee-track {
+      display: flex;
+      gap: var(--space-6);
+      width: max-content;
+      animation: marquee 32s linear infinite;
+    }
+
+    .marquee-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-faint);
+      white-space: nowrap;
+    }
+
+    .marquee-item i {
+      color: var(--color-accent);
+      font-size: 1.05rem;
+    }
+
+    @keyframes marquee {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .marquee-track {
+        animation: none;
+      }
+    }
+
+    /* Categories */
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-3);
+    }
+
+    .category-card {
+      position: relative;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      aspect-ratio: 4/5;
+      display: block;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-soft);
+      transition: transform 0.45s var(--ease-out), box-shadow 0.45s var(--ease-out);
+    }
+
+    .category-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .category-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.9s var(--ease-out);
+    }
+
+    .category-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(38, 24, 20, 0.85) 0%, rgba(38, 24, 20, 0.1) 55%, transparent 100%);
+    }
+
+    .category-card:hover img {
+      transform: scale(1.07);
+    }
+
+    .category-content {
+      position: absolute;
+      bottom: 0;
+      inset-inline: 0;
+      padding: var(--space-3);
+      z-index: 2;
+      color: #fff;
+    }
+
+    .category-title {
+      font-size: 1.25rem;
+      color: #fff;
+      margin-bottom: 2px;
+    }
+
+    .category-content p {
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.78);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin: 0;
+    }
+
+    /* Brand story */
+    .brand-story {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(30rem 20rem at 15% 10%, var(--color-accent-soft), transparent 60%),
+        radial-gradient(30rem 20rem at 85% 90%, var(--color-sage-soft), transparent 60%),
+        var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      padding: var(--space-8) var(--space-4);
+      text-align: center;
+    }
+
+    /* Ingredients — layout comes from the shared .grid-3 utility */
+    .ingredient-item {
+      text-align: center;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+      transition: transform 0.45s var(--ease-out), box-shadow 0.45s var(--ease-out);
+    }
+
+    .ingredient-item:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .ingredient-photo {
+      position: relative;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      background: var(--bg-secondary);
+    }
+
+    .ingredient-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.9s var(--ease-out);
+    }
+
+    .ingredient-item:hover .ingredient-photo img {
+      transform: scale(1.06);
+    }
+
+    .ingredient-body {
+      padding: 0 var(--space-3) var(--space-4);
+    }
+
+    .ingredient-icon {
+      position: relative;
+      z-index: 2;
+      width: 62px;
+      height: 62px;
+      margin: -31px auto var(--space-2);
+      background: var(--bg-card);
+      border: 1px solid var(--color-accent-ring);
+      border-radius: 20px;
+      display: grid;
+      place-items: center;
+      font-size: 1.6rem;
+      color: var(--color-accent);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .ingredient-item p {
+      font-size: 0.92rem;
+    }
+
+    .ingredient-item .badge {
+      margin-top: var(--space-3);
+    }
+
+    /* Steps */
+    .routine-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-3);
+      counter-reset: step;
+    }
+
+    .routine-step {
+      position: relative;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+      background: var(--bg-card);
+      overflow: hidden;
+      transition: transform 0.45s var(--ease-out), box-shadow 0.45s var(--ease-out);
+    }
+
+    .routine-step:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .routine-photo {
+      position: relative;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      background: var(--bg-secondary);
+    }
+
+    .routine-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.9s var(--ease-out);
+    }
+
+    .routine-step:hover .routine-photo img {
+      transform: scale(1.06);
+    }
+
+    /* Kept only as far up as the numeral needs for legibility. */
+    .routine-photo::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(38, 24, 20, 0.62), transparent 38%);
+    }
+
+    .routine-photo .step-num {
+      counter-increment: step;
+      position: absolute;
+      bottom: 12px;
+      inset-inline-start: 14px;
+      z-index: 2;
+      font-family: var(--font-heading);
+      font-size: 1.9rem;
+      color: #fff;
+      line-height: 1;
+    }
+
+    .routine-photo .step-num::before {
+      content: '0' counter(step);
+    }
+
+    .routine-body {
+      padding: var(--space-3);
+      text-align: center;
+    }
+
+    .routine-step h4 {
+      margin-bottom: 6px;
+    }
+
+    .routine-step p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin: 0 auto;
+      max-width: 30ch;
+    }
+
+    /* Testimonials — layout comes from the shared .grid-3 utility */
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--space-4);
+      align-items: stretch;
+    }
+
+    .testimonial-card {
+      background: rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: var(--space-5);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      text-align: start;
+      gap: var(--space-3);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.4s var(--ease-out), box-shadow 0.4s var(--ease-out), border-color 0.4s ease;
+    }
+
+    [data-theme="dark"] .testimonial-card {
+      background: rgba(15, 23, 42, 0.4);
+    }
+
+    .testimonial-card::before {
+      content: '\201C';
+      position: absolute;
+      top: -10px;
+      right: 20px;
+      font-size: 8rem;
+      font-family: Georgia, serif;
+      color: var(--color-accent);
+      opacity: 0.08;
+      pointer-events: none;
+      line-height: 1;
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-hover), 0 10px 30px rgba(14, 165, 233, 0.06);
+      border-color: var(--color-accent-ring);
+    }
+
+    /* Staggered offset for the middle card on large screens */
+    @media (min-width: 992px) {
+      .testimonial-grid > div:nth-child(2) {
+        transform: translateY(20px);
+      }
+      .testimonial-grid > div:nth-child(2):hover {
+        transform: translateY(14px);
+      }
+    }
+
+    .stars {
+      color: #f59e0b;
+      letter-spacing: 2px;
+      font-size: 0.95rem;
+      display: flex;
+      gap: 2px;
+    }
+
+    .testimonial-card blockquote {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--text-muted);
+      margin: 0;
+      font-style: italic;
+    }
+
+    .testimonial-product {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px;
+      border-radius: var(--radius-md);
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      margin-top: auto;
+    }
+
+    .testimonial-product img {
+      width: 44px;
+      height: 44px;
+      border-radius: 8px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .testimonial-product span {
+      display: block;
+    }
+
+    .testimonial-product .tp-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-faint);
+      font-weight: 700;
+    }
+
+    .testimonial-product .tp-name {
+      font-size: 0.85rem;
+      color: var(--text-main);
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    .reviewer {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding-top: var(--space-2);
+      border-top: 1px dashed var(--border-color);
+    }
+
+    .reviewer-avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      object-fit: cover;
+      background: var(--bg-secondary);
+      border: 2px solid var(--bg-card);
+      box-shadow: 0 0 0 1px var(--border-strong), var(--shadow-xs);
+      flex-shrink: 0;
+    }
+
+    .reviewer-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .reviewer-info p {
+      margin: 0;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .reviewer-info p::after {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      background: #10b981;
+      border-radius: 50%;
+      box-shadow: 0 0 8px #10b981;
+    }
+
+    .reviewer-info small {
+      color: var(--text-faint);
+      font-size: 0.76rem;
+    }
+
+    /* Routine finder (interactive) */
+    .finder {
+      background:
+        radial-gradient(34rem 20rem at 12% 0%, var(--color-accent-soft), transparent 62%),
+        radial-gradient(30rem 20rem at 88% 100%, var(--color-sage-soft), transparent 62%),
+        var(--bg-secondary);
+      border-block: 1px solid var(--border-color);
+      padding: var(--space-8) 0;
+    }
+
+    .finder-panel {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-soft);
+      padding: var(--space-5);
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: var(--space-5);
+      align-items: stretch;
+    }
+
+    @media (max-width: 991px) {
+      .finder-panel {
+        grid-template-columns: 1fr;
+      }
+      .finder-controls {
+        border-inline-end: none !important;
+        padding-inline-end: 0 !important;
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: var(--space-4);
+      }
+    }
+
+    .finder-controls {
+      border-inline-end: 1px solid var(--border-color);
+      padding-inline-end: var(--space-5);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+    }
+
+    .finder-q {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-faint);
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    /* Choice group redesigned as beautiful grid cards */
+    .finder-controls .choice-group {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-bottom: var(--space-4);
+    }
+
+    .choice {
+      display: block;
+      cursor: pointer;
+    }
+
+    .choice input {
+      position: absolute;
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .choice span {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 8px;
+      padding: var(--space-3) var(--space-2);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+      background: var(--bg-primary);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      height: 100%;
+    }
+
+    .choice span i {
+      font-size: 1.35rem;
+      color: var(--text-faint);
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    .choice span:hover {
+      border-color: var(--color-accent-ring);
+      color: var(--text-main);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-xs);
+    }
+
+    .choice span:hover i {
+      color: var(--color-accent);
+    }
+
+    .choice input:checked + span {
+      background: var(--color-accent-soft);
+      border-color: var(--color-accent);
+      color: var(--color-accent);
+      box-shadow: 0 4px 12px rgba(14, 165, 233, 0.1);
+    }
+
+    .choice input:checked + span i {
+      color: var(--color-accent);
+      transform: scale(1.1);
+    }
+
+    .choice input:focus-visible + span {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 2px;
+    }
+
+    .finder-total {
+      background: linear-gradient(135deg, var(--bg-secondary), var(--bg-card));
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: var(--space-3);
+      text-align: center;
+      margin-top: auto;
+      box-shadow: var(--shadow-xs);
+    }
+
+    .finder-total .amount {
+      font-family: var(--font-heading);
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--color-accent);
+      display: block;
+      line-height: 1.1;
+    }
+
+    .finder-total small {
+      color: var(--text-faint);
+      font-size: 0.76rem;
+      font-weight: 600;
+    }
+
+    #routineSummary {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: var(--space-3);
+      text-align: center;
+      background: var(--bg-secondary);
+      padding: 10px 14px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-color);
+    }
+
+    #routineSummary strong {
+      color: var(--color-accent);
+    }
+
+    .routine-result {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    @media (max-width: 576px) {
+      .routine-result {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .routine-card {
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 14px;
+      background: var(--bg-primary);
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      text-align: start;
+      gap: 6px;
+      transition: border-color 0.3s ease, transform 0.3s var(--ease-out), box-shadow 0.3s ease;
+    }
+
+    .routine-card:hover {
+      border-color: var(--color-accent-ring);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-sm), 0 4px 15px rgba(14, 165, 233, 0.05);
+    }
+
+    .routine-card.pop-in {
+      animation: popIn 0.5s var(--ease-out) both;
+      animation-delay: var(--card-delay, 0ms);
+    }
+
+    @keyframes popIn {
+      from {
+        opacity: 0;
+        transform: translateY(14px) scale(0.98);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .routine-card-head {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      width: 100%;
+      margin-bottom: 4px;
+    }
+
+    .routine-step-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      background: var(--color-accent-soft);
+      color: var(--color-accent);
+      flex-shrink: 0;
+      font-size: 1.1rem;
+    }
+
+    .routine-step-name {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--text-faint);
+    }
+
+    .routine-card h4 {
+      margin: 0;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .routine-card p {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin: 0;
+      line-height: 1.4;
+    }
+
+    .routine-card .badge {
+      font-size: 0.68rem;
+      padding: 3px 8px;
+      border-radius: 6px;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      color: var(--color-sage);
+      font-weight: 600;
+    }
+
+    .routine-card-foot {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      margin-top: auto;
+      padding-top: 8px;
+      border-top: 1px dashed var(--border-color);
+    }
+
+    .routine-price {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--color-accent);
+    }
+
+    /* CTA */
+    .cta-section {
+      text-align: center;
+      padding: var(--space-8) 0;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(40rem 24rem at 50% 120%, var(--color-accent-soft), transparent 65%),
+        var(--bg-secondary);
+      border-block: 1px solid var(--border-color);
+    }
+
+    /* Side by side but tight: pull the floating chips back in so they
+       don't clip against the viewport edge. */
+    @media (min-width: 1024px) and (max-width: 1200px) {
+
+      /* Drop the 100vh stretch here — it was padding the hero out with
+         empty space above and below the content. */
+      .hero-home {
+        min-height: auto;
+        padding: calc(76px + var(--space-4)) 0 var(--space-5);
+      }
+
+      .hero-grid {
+        gap: var(--space-4);
+      }
+
+      .hero-frame {
+        aspect-ratio: 5 / 6;
+      }
+
+      .chip-top {
+        inset-inline-start: -2%;
+      }
+
+      .chip-bottom {
+        inset-inline-end: -2%;
+      }
+    }
+
+    /* The hero stays two-up at 1024 and only stacks below it —
+       text first, image underneath, which is the DOM order already. */
+    @media (max-width: 1023px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-5);
+      }
+
+      .hero-home {
+        min-height: auto;
+        padding-top: calc(76px + var(--space-5));
+      }
+
+      .hero-visual {
+        max-width: 420px;
+        margin-inline: auto;
+        width: 100%;
+      }
+
+      .chip-top {
+        inset-inline-start: 4%;
+      }
+
+      .chip-bottom {
+        inset-inline-end: 4%;
+      }
+    }
+
+    @media (max-width: 1024px) {
+
+      .categories-grid,
+      .routine-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .finder-panel {
+        grid-template-columns: 1fr;
+      }
+
+      .finder-controls {
+        border-inline-end: none;
+        border-bottom: 1px solid var(--border-color);
+        padding-inline-end: 0;
+        padding-bottom: var(--space-3);
+      }
+    }
+
+    @media (max-width: 560px) {
+
+      .categories-grid,
+      .routine-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .routine-result {
+        grid-template-columns: 1fr;
+      }
+
+      .finder-panel {
+        padding: var(--space-3);
+        border-radius: var(--radius-lg);
+      }
+
+      /* Chips drop out of the frame and stack under the image rather than
+         being hidden — they carry the proof points. */
+      .hero-visual {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .hero-chip {
+        position: static;
+        width: 100%;
+        margin-top: var(--space-2);
+        background: var(--bg-card);
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        box-shadow: var(--shadow-soft);
+        animation: none;
+      }
+
+      .brand-story {
+        padding: var(--space-6) var(--space-3);
+        border-radius: var(--radius-lg);
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        max-width: 320px;
+        margin-inline: auto;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .hero-trust {
+        flex-direction: column;
+        align-items: flex-start;
+        width: fit-content;
+        margin-inline: auto;
+        gap: var(--space-2);
+        padding-top: var(--space-4);
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-  <!-- Header -->
-  <div id="global-header"></div>
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <a href="index.html" class="logo"><img src="assets/images/aquavista-logo.png" alt="AquaVista" style="height: var(--logo-height, 58px); width: auto; display: block;"></a>
+
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="home2.html" class="nav-link">Home 2</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="journal.html" class="nav-link">Journal</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button class="icon-btn theme-toggle" aria-label="Toggle Theme">
+            <i class="ph ph-moon"></i>
+          </button>
+          <button class="icon-btn rtl-toggle" aria-label="Toggle RTL">
+            <i class="ph ph-arrows-left-right"></i>
+          </button>
+          <a href="login.html" class="btn btn-outline btn-sm">Login</a>
+        </div>
+
+        <button class="hamburger" aria-label="Open Menu">
+          <i class="ph ph-list"></i>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MOBILE DRAWER -->
+  <div class="drawer-overlay"></div>
+  <div class="drawer">
+    <div class="drawer-header">
+      <div class="logo"><img src="assets/images/aquavista-logo.png" alt="AquaVista" style="height: var(--logo-height, 58px); width: auto; display: block;"></div>
+      <button class="drawer-close" aria-label="Close Menu">
+        <i class="ph ph-x"></i>
+      </button>
+    </div>
+
+    <div class="drawer-links">
+      <a href="index.html" class="nav-link active">Home</a>
+      <a href="home2.html" class="nav-link">Home 2</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="journal.html" class="nav-link">Journal</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+
+    <div class="drawer-actions">
+      <div class="nav-actions">
+        <button class="icon-btn theme-toggle" aria-label="Toggle Theme">
+          <i class="ph ph-moon"></i>
+        </button>
+        <button class="icon-btn rtl-toggle" aria-label="Toggle RTL">
+          <i class="ph ph-arrows-left-right"></i>
+        </button>
+      </div>
+      <a href="login.html" class="btn btn-outline">Login</a>
+    </div>
+  </div>
 
   <main>
-    <!-- Section 1: Premium Hero -->
-    <section class="hero-section section-padding d-flex align-items-center" style="min-height: 85vh; background: linear-gradient(135deg, var(--bg-color) 50%, var(--surface) 50%); overflow: hidden;">
+    <!-- HERO -->
+
+    <section class="hero-home">
+      <div class="aura float-anim"
+        style="width: 380px; height: 380px; background: var(--color-accent); opacity: 0.16; top: -6%; inset-inline-end: -4%;">
+      </div>
+      <div class="aura"
+        style="width: 320px; height: 320px; background: var(--color-sage); opacity: 0.14; bottom: -10%; inset-inline-start: -8%;">
+      </div>
+
       <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-6 mb-5 mb-lg-0 reveal-left">
-            <h1 class="display-4 fw-bold mb-4 hero-h1">Build Your Dream Pool with Confidence</h1>
-            <p class="lead mb-4" style="color: var(--text-muted);">Custom 3D pool designs, flawless structural installation, and comprehensive annual maintenance packages for your backyard oasis.</p>
-            <div class="d-flex flex-wrap gap-3">
-              <a href="pricing.html" class="btn-primary-brand">View Packages <i class="fas fa-arrow-right"></i></a>
-              <a href="booking.html" class="btn-secondary-brand">Book a Site Visit</a>
+        <div class="hero-grid">
+          <div class="hero-content">
+            <span class="eyebrow animate-on-scroll">Bespoke backyard resorts</span>
+
+            <h1 class="animate-on-scroll delay-1">
+              <span class="typing-text" style="--type-width: 14ch;">Bespoke Pools,</span><br>
+              crafted <span class="text-gradient">beautifully.</span>
+            </h1>
+
+            <p class="lead animate-on-scroll delay-2">
+              Premium fiberglass shells and custom concrete pool designs engineered for structural lifetime durability and crystal-clear water. No hidden fees, no mystery delays.
+            </p>
+
+            <div class="hero-actions animate-on-scroll delay-3">
+              <a href="services.html" class="btn btn-primary btn-lg">
+                Browse pool equipment
+              </a>
+              <a href="services.html#consultation" class="btn btn-outline btn-lg">
+                Book free site survey
+              </a>
+            </div>
+
+            <div class="hero-trust animate-on-scroll delay-4">
+              <span class="trust-item"><i class="ph ph-blueprint"></i> Full structural specs</span>
+              <span class="trust-item"><i class="ph ph-shield-check"></i> Lifetime shell warranty</span>
+              <span class="trust-item"><i class="ph ph-swimming-pool"></i> 1,200+ backyard pools built</span>
             </div>
           </div>
-          <div class="col-lg-6 reveal-right">
-            <div class="position-relative">
-              <img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=1200&q=80" alt="Luxurious Modern Swimming Pool" class="img-fluid rounded-4 shadow-lg" style="object-fit: cover; height: 500px; width: 100%;">
-              <div class="position-absolute bottom-0 start-0 translate-middle-y ms-4 p-3 bg-white rounded-3 shadow-md" style="z-index: 2; transform: translateY(50%);">
-                <div class="d-flex align-items-center gap-3">
-                  <div class="bg-success text-white p-2 rounded-circle"><i class="fas fa-shield-alt"></i></div>
-                  <div>
-                    <h6 class="mb-0 fw-bold">100% Leak-Free</h6>
-                    <small class="text-muted">Structural Shell Guarantee</small>
-                  </div>
-                </div>
+
+          <div class="hero-visual animate-on-scroll delay-2">
+            <div class="hero-frame">
+              <img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?q=80&w=1000"
+                alt="AquaVista luxury swimming pool design with clear water" width="1000" height="1250" loading="eager">
+            </div>
+
+            <div class="hero-chip chip-top float-anim">
+              <i class="ph ph-ruler"></i>
+              <div>
+                <strong>Bespoke Engineering</strong>
+                <span>Certified site plans included</span>
+              </div>
+            </div>
+
+            <div class="hero-chip chip-bottom">
+              <i class="ph ph-star"></i>
+              <div>
+                <strong>5.0 / 5 Rating</strong>
+                <span>From 1,200+ installations</span>
               </div>
             </div>
           </div>
@@ -54,225 +1148,411 @@
       </div>
     </section>
 
-    <!-- Section 2: Why Choose Us -->
-    <section class="section-padding bg-surface">
+
+    <!-- MARQUEE -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span class="marquee-item"><i class="ph ph-waves"></i> Premium shells</span>
+        <span class="marquee-item"><i class="ph ph-shield-check"></i> Lifetime warranty</span>
+        <span class="marquee-item"><i class="ph ph-wrench"></i> ECO sand filtration</span>
+        <span class="marquee-item"><i class="ph ph-calendar-check"></i> Weekly service plans</span>
+        <span class="marquee-item"><i class="ph ph-certificate"></i> Fully licensed &amp; insured</span>
+        <span class="marquee-item"><i class="ph ph-waves"></i> Premium shells</span>
+        <span class="marquee-item"><i class="ph ph-shield-check"></i> Lifetime warranty</span>
+        <span class="marquee-item"><i class="ph ph-wrench"></i> ECO sand filtration</span>
+        <span class="marquee-item"><i class="ph ph-calendar-check"></i> Weekly service plans</span>
+        <span class="marquee-item"><i class="ph ph-certificate"></i> Fully licensed &amp; insured</span>
+      </div>
+    </div>
+
+    <!-- PRODUCT CATEGORIES -->
+    <section>
       <div class="container">
-        <div class="section-title reveal">
-          <span>Why Choose Us</span>
-          <h2>Expert Swimming Pool Solutions</h2>
+        <div class="section-title animate-on-scroll">
+          <span class="eyebrow">Services &amp; Supplies</span>
+          <h2>A complete installation in 4 stages</h2>
+          <p>Everything your pool project needs — structural shell design to annual chemical maintenance.</p>
         </div>
-        <div class="row align-items-center">
-          <div class="col-lg-5 mb-5 mb-lg-0 reveal-left">
-            <img src="https://images.unsplash.com/photo-1572331130797-3dfd7ebd4b58?w=800&q=80" alt="Swimming pool construction coping" class="img-fluid rounded-4 shadow-md" style="height: 600px; object-fit: cover;">
-          </div>
-          <div class="col-lg-7">
-            <div class="row g-4">
-              <div class="col-md-6 reveal">
-                <div class="premium-card text-center">
-                  <i class="fas fa-drafting-compass fa-2x mb-3" style="color: var(--secondary);"></i>
-                  <h4>Custom Pool Design</h4>
-                  <p class="text-muted mb-0">Visual 3D layouts and design consultations tailored to fit your backyard architecture perfectly.</p>
-                </div>
-              </div>
-              <div class="col-md-6 reveal">
-                <div class="premium-card text-center">
-                  <i class="fas fa-trowel-bricks fa-2x mb-3" style="color: var(--secondary);"></i>
-                  <h4>Precision Installation</h4>
-                  <p class="text-muted mb-0">Flawless structural construction, high-grade steel reinforcements, and premium plaster finishes.</p>
-                </div>
-              </div>
-              <div class="col-md-6 reveal">
-                <div class="premium-card text-center">
-                  <i class="fas fa-flask-vial fa-2x mb-3" style="color: var(--secondary);"></i>
-                  <h4>Chemical &amp; Supply Info</h4>
-                  <p class="text-muted mb-0">Premium chemical supply kits, automated water balancing, and sanitation solutions delivery.</p>
-                </div>
-              </div>
-              <div class="col-md-6 reveal">
-                <div class="premium-card text-center">
-                  <i class="fas fa-calendar-check fa-2x mb-3" style="color: var(--secondary);"></i>
-                  <h4>Annual Maintenance</h4>
-                  <p class="text-muted mb-0">Worry-free maintenance packages including weekly cleaning, filter washes, and water test reports.</p>
-                </div>
-              </div>
+        <div class="categories-grid animate-on-scroll delay-1">
+          <a href="services.html?category=shells" class="category-card">
+            <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?q=80&w=800" alt="Pool Shells" width="800" height="800"
+              loading="lazy">
+            <div class="category-content">
+              <h3 class="category-title">Pool Shells</h3>
+              <p><i class="ph ph-waves"></i> Fiberglass &amp; Concrete models</p>
             </div>
-          </div>
+          </a>
+          <a href="services.html?category=excavations" class="category-card">
+            <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=800" alt="Site Prep" width="800" height="800"
+              loading="lazy">
+            <div class="category-content">
+              <h3 class="category-title">Site Preparation</h3>
+              <p><i class="ph ph-shovel"></i> Grading &amp; rock excavation</p>
+            </div>
+          </a>
+          <a href="services.html?category=equipment" class="category-card">
+            <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=800" alt="Pool Equipment" width="800"
+              height="800" loading="lazy">
+            <div class="category-content">
+              <h3 class="category-title">Pool Equipment</h3>
+              <p><i class="ph ph-wrench"></i> Energy-efficient ECO filtration</p>
+            </div>
+          </a>
+          <a href="services.html?category=service" class="category-card">
+            <img src="https://images.unsplash.com/photo-1518156677180-95a2893f3e9f?q=80&w=800" alt="Maintenance Care" width="800" height="800"
+              loading="lazy">
+            <div class="category-content">
+              <h3 class="category-title">Pool Maintenance</h3>
+              <p><i class="ph ph-calendar-check"></i> Weekly &amp; seasonal service plans</p>
+            </div>
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- Section 3: Pool Maintenance Portal -->
-    <section class="section-padding" style="background-color: var(--primary); color: #fff;">
+    <!-- BRAND STORY -->
+    <section style="padding-top: var(--space-3);">
       <div class="container">
-        <div class="row align-items-center flex-row-reverse">
-          <div class="col-lg-6 mb-5 mb-lg-0 reveal-right">
-            <h2 class="text-white mb-4">Crystal Clear Water All Year Round</h2>
-            <p class="mb-4" style="color: #cbd5e1;">Our annual pool maintenance packages and high-quality chemical supplies keep your water clean, balanced, and safe. Track your water health online with our water analysis reports.</p>
-            
-            <ul class="list-unstyled mb-5">
-              <li class="mb-3 d-flex align-items-start gap-3">
-                <i class="fas fa-check-circle text-success mt-1"></i>
-                <span style="color: #cbd5e1;">Weekly water chemistry testing &amp; balancing</span>
-              </li>
-              <li class="mb-3 d-flex align-items-start gap-3">
-                <i class="fas fa-check-circle text-success mt-1"></i>
-                <span style="color: #cbd5e1;">Regular pool filter wash &amp; equipment health checks</span>
-              </li>
-              <li class="mb-3 d-flex align-items-start gap-3">
-                <i class="fas fa-check-circle text-success mt-1"></i>
-                <span style="color: #cbd5e1;">Debris vacuuming, wall brushing &amp; surface skimming</span>
-              </li>
-            </ul>
-            
-            <a href="pricing.html" class="btn-secondary-brand">View Maintenance Packages</a>
-          </div>
-          <div class="col-lg-6 reveal-left">
-            <div class="position-relative">
-              <img src="https://images.unsplash.com/photo-1595155708815-5e6b12f4581f?w=800&q=80" alt="Beautifully balanced pool water" class="img-fluid rounded-4 shadow-lg border border-secondary" style="height: 500px; width: 90%; object-fit: cover;">
-              <div class="position-absolute bg-white text-dark p-4 rounded-3 shadow-lg floating-mocktest-card">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                  <h6 class="mb-0 fw-bold">Pool Water Health</h6>
-                  <span class="badge bg-success">Balanced</span>
-                </div>
-                <div class="progress mb-2" style="height: 8px;">
-                  <div class="progress-bar bg-primary" role="progressbar" style="width: 98%" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <small class="text-muted fw-bold">pH: 7.4 | Chlorine: 2.5 ppm</small>
-              </div>
-            </div>
+        <div class="brand-story animate-on-scroll">
+          <span class="eyebrow" style="justify-content: center;">Our Promise</span>
+          <h2>Quality, Honesty, Structural Integrity</h2>
+          <p class="lead" style="margin: var(--space-3) auto var(--space-4); max-width: 700px;">
+            Pool building shouldn't be a black box. At AquaVista, we list every material specification, engineering certificate, and water filtration component up front — no hidden fees, just crystal-clear results.
+          </p>
+          <div style="display: flex; gap: var(--space-2); justify-content: center; flex-wrap: wrap;">
+            <a href="about.html" class="btn btn-primary">Our philosophy</a>
+            <a href="services.html" class="btn btn-outline">Read specifications</a>
           </div>
         </div>
       </div>
     </section>
-
-    <!-- Section 4: Installation Process -->
-    <section class="section-padding bg-surface">
+    <!-- INGREDIENT HIGHLIGHTS -->
+    <section>
       <div class="container">
-        <div class="section-title reveal">
-          <span>Installation Process</span>
-          <h2>Step-By-Step Construction Excellence</h2>
+        <div class="section-title animate-on-scroll">
+          <span class="eyebrow">Water Treatment Tech</span>
+          <h2>Chemical &amp; Water Balance</h2>
+          <p>Scientific water care is critical to protect your health and extend your pool equipment's lifespan.</p>
         </div>
-        
-        <!-- Timeline Layout -->
-        <div class="row align-items-center mb-5">
-          <div class="col-lg-6 mb-4 mb-lg-0 reveal-left">
-            <img src="https://images.unsplash.com/photo-1560742125-1e35fa8f01c8?w=800&q=80" alt="Pool construction excavation" class="img-fluid rounded-4 shadow-md w-100" style="height: 400px; object-fit: cover;">
+
+        <div class="ingredients-grid grid-3 animate-on-scroll delay-1">
+          <div class="ingredient-item">
+            <div class="ingredient-photo">
+              <img src="https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?q=80&w=600" alt="AquaVista Chlorine water balance"
+                width="700" height="500" loading="lazy">
+            </div>
+            <div class="ingredient-body">
+              <div class="ingredient-icon"><i class="ph ph-drop"></i></div>
+              <h4>Chlorine &amp; Sanitizers</h4>
+              <p class="text-muted">High-purity disinfectants that eliminate organic pathogens and keep water sparkling.</p>
+              <span class="badge">Maintained at 2–4 PPM</span>
+            </div>
           </div>
-          <div class="col-lg-6 reveal-right">
-            <div class="ms-lg-4">
-              <div class="d-flex mb-4">
-                <div class="flex-shrink-0">
-                  <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center fw-bold fs-5" style="width: 50px; height: 50px;">1</div>
-                </div>
-                <div class="ms-4">
-                  <h4 class="mb-2">Excavation &amp; Framework</h4>
-                  <p class="text-muted">Site survey, heavy digging, structural plumbing layout, and perimeter steel framing.</p>
-                </div>
-              </div>
-              
-              <div class="d-flex mb-4">
-                <div class="flex-shrink-0">
-                  <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center fw-bold fs-5" style="width: 50px; height: 50px;">2</div>
-                </div>
-                <div class="ms-4">
-                  <h4 class="mb-2">Concrete Shell Casting</h4>
-                  <p class="text-muted">Installing reinforcing steel cages followed by high-strength concrete spray application.</p>
-                </div>
-              </div>
-              
-              <div class="d-flex">
-                <div class="flex-shrink-0">
-                  <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center fw-bold fs-5" style="width: 50px; height: 50px;">3</div>
-                </div>
-                <div class="ms-4">
-                  <h4 class="mb-2">Tiling, Plastering &amp; Startup</h4>
-                  <p class="text-muted">Finishing with premium coping stone, tiling, interior plastering, and initial chemical balancing.</p>
-                </div>
-              </div>
+
+          <div class="ingredient-item">
+            <div class="ingredient-photo">
+              <img src="https://images.unsplash.com/photo-1519817650390-64a93db51149?q=80&w=600" alt="AquaVista pH balance chemical"
+                width="700" height="500" loading="lazy">
+            </div>
+            <div class="ingredient-body">
+              <div class="ingredient-icon"><i class="ph ph-sparkle"></i></div>
+              <h4>pH Balancers</h4>
+              <p class="text-muted">Maintains optimal water alkalinity to ensure swimming comfort and prevent equipment corrosion.</p>
+              <span class="badge">Target pH 7.2 – 7.6</span>
+            </div>
+          </div>
+
+          <div class="ingredient-item">
+            <div class="ingredient-photo">
+              <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=600"
+                alt="AquaVista Algaecide water care" width="700" height="500" loading="lazy">
+            </div>
+            <div class="ingredient-body">
+              <div class="ingredient-icon"><i class="ph ph-leaf"></i></div>
+              <h4>Algaecide &amp; Clarifiers</h4>
+              <p class="text-muted">Specialized blends that prevent green pool blooms and gather microscopic debris for the filter.</p>
+              <span class="badge">Weekly prevention dose</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Section 5: Success & Statistics -->
-    <section class="section-padding" style="background-color: var(--bg-color);">
+    <!-- ROUTINE -->
+    <section style="padding-top: 0;">
       <div class="container">
-        <div class="section-title text-center reveal">
-          <span class="text-secondary fw-bold text-uppercase tracking-wider mb-2 d-block">Our Portfolio</span>
-          <h2>Backyard Transformations Completed</h2>
-          <p class="text-muted mx-auto mt-3" style="max-width: 600px;">We pride ourselves on premium pool craftsmanship. From luxury concrete installations to weekly maintenance, we keep your staycation beautiful.</p>
+        <div class="section-title animate-on-scroll">
+          <span class="eyebrow">Construction steps</span>
+          <h2>A seamless pool installation process</h2>
         </div>
 
-        <div class="row g-4 mb-5 reveal-up">
-          <div class="col-lg-3 col-md-6 col-sm-6">
-            <div class="premium-card text-center h-100">
-              <h2 class="display-5 fw-bold text-primary mb-0">500+</h2>
-              <p class="text-muted fw-bold mb-0">Pools Completed</p>
+        <div class="routine-grid animate-on-scroll delay-1">
+          <div class="routine-step">
+            <div class="routine-photo">
+              <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=600" alt="Design Blueprint" width="700" height="700"
+                loading="lazy">
+              <span class="step-num"></span>
+            </div>
+            <div class="routine-body">
+              <h4>Design &amp; Shell</h4>
+              <p>Select your fiberglass shell model or approve custom steel concrete engineering drawings.</p>
             </div>
           </div>
-          <div class="col-lg-3 col-md-6 col-sm-6">
-            <div class="premium-card text-center h-100">
-              <h2 class="display-5 fw-bold text-secondary mb-0">99.8%</h2>
-              <p class="text-muted fw-bold mb-0">Leak-Free Rate</p>
+
+          <div class="routine-step">
+            <div class="routine-photo">
+              <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=600" alt="Excavation digger" width="700" height="700"
+                loading="lazy">
+              <span class="step-num"></span>
+            </div>
+            <div class="routine-body">
+              <h4>Excavation</h4>
+              <p>Precision site survey, utility tracking, laser-guided grading, and dirt hauling.</p>
             </div>
           </div>
-          <div class="col-lg-3 col-md-6 col-sm-6">
-            <div class="premium-card text-center h-100">
-              <h2 class="display-5 fw-bold text-primary mb-0">30+</h2>
-              <p class="text-muted fw-bold mb-0">Design Awards</p>
+
+          <div class="routine-step">
+            <div class="routine-photo">
+              <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=600" alt="Pump Plumbing" width="700" height="700"
+                loading="lazy">
+              <span class="step-num"></span>
+            </div>
+            <div class="routine-body">
+              <h4>Equipment Setup</h4>
+              <p>Installation of pumps, filters, sanitizers, and electrical wiring configurations.</p>
             </div>
           </div>
-          <div class="col-lg-3 col-md-6 col-sm-6">
-            <div class="premium-card text-center h-100">
-              <h2 class="display-5 fw-bold text-secondary mb-0">4.9/5</h2>
-              <p class="text-muted fw-bold mb-0">Client Rating</p>
+
+          <div class="routine-step">
+            <div class="routine-photo">
+              <img src="https://images.unsplash.com/photo-1560185007-c5ca9d2c014d?q=80&w=600" alt="Pool Maintenance service" width="700" height="700"
+                loading="lazy">
+              <span class="step-num"></span>
+            </div>
+            <div class="routine-body">
+              <h4>Annual Care</h4>
+              <p>Regular maintenance, winterization plans, and supply of chemicals for crystal clear water.</p>
             </div>
           </div>
         </div>
+      </div>
+    </section>
+    <!-- INTERACTIVE ROUTINE FINDER -->
+    <section class="finder" id="routineFinder">
+      <div class="container">
+        <div class="section-title animate-on-scroll">
+          <span class="eyebrow">Interactive planner</span>
+          <h2>Build your pool package</h2>
+          <p>Tell us your site's ground type and main backyard goal — the 4 steps update instantly.</p>
+        </div>
 
-        <div class="row align-items-center">
-          <div class="col-lg-6 mb-5 mb-lg-0 reveal-left">
-            <div class="premium-card p-4 border-start border-4 border-secondary">
-              <div class="d-flex gap-3">
-                <i class="fas fa-quote-left fa-2x" style="color: var(--border);"></i>
-                <div class="text-center">
-                  <p class="fst-italic mb-3">"AquaPro Pools transformed our empty backyard into an absolute paradise. The tiling design is stunning, and the weekly maintenance makes it worry-free!"</p>
-                  <h6 class="fw-bold mb-0 text-primary">Sarah Jenkins</h6>
-                  <small class="text-warning">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                  </small>
-                </div>
+        <div class="finder-panel animate-on-scroll delay-1">
+
+          <div class="finder-controls">
+            <span class="finder-q">1 — Site Ground Type</span>
+            <div class="choice-group">
+              <label class="choice"><input type="radio" name="rfSkin" value="soil" checked><span><i class="ph ph-drop"></i>
+                  Standard Soil</span></label>
+              <label class="choice"><input type="radio" name="rfSkin" value="rock"><span><i class="ph ph-wind"></i>
+                  Rocky Ground</span></label>
+              <label class="choice"><input type="radio" name="rfSkin" value="slope"><span><i
+                    class="ph ph-circle-half"></i> Sloped Yard</span></label>
+              <label class="choice"><input type="radio" name="rfSkin" value="narrow"><span><i
+                    class="ph ph-feather"></i> Narrow Access</span></label>
+            </div>
+
+            <span class="finder-q">2 — Primary Design Goal</span>
+            <div class="choice-group">
+              <label class="choice"><input type="radio" name="rfConcern" value="recreation" checked><span>Family Fun</span></label>
+              <label class="choice"><input type="radio" name="rfConcern" value="aesthetic"><span>Luxury Design</span></label>
+              <label class="choice"><input type="radio" name="rfConcern" value="exercise"><span>Lap Swimming</span></label>
+              <label class="choice"><input type="radio" name="rfConcern" value="easy"><span>Low Care</span></label>
+            </div>
+
+            <div class="finder-total">
+              <span class="amount" id="routineTotal">$0</span>
+              <small>Full installation &amp; maintenance bundle</small>
+            </div>
+          </div>
+
+          <div>
+            <p id="routineSummary" role="status"></p>
+
+            <div class="routine-result" id="routineResult"></div>
+
+            <div
+              style="display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-2); margin-top: var(--space-4);">
+              <a href="services.html" class="btn btn-primary" id="routineShopLink">
+                Configure package
+              </a>
+              <a href="services.html#consultation" class="btn btn-outline">Request yard consult instead</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section>
+      <div class="container">
+        <div class="section-title animate-on-scroll">
+          <span class="eyebrow">Customer Journeys</span>
+          <h2>What pool owners say</h2>
+        </div>
+
+        <div class="testimonial-grid grid-3 animate-on-scroll delay-1">
+          <div class="testimonial-card">
+            <div class="stars">
+              <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+            </div>
+            <blockquote>"My pool water is crystal clear and completely safe. The transparency about equipment and chemicals is refreshing."</blockquote>
+            <div class="testimonial-product">
+              <img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?q=80&w=1287&auto=format&fit=crop"
+                alt="Weekly Premium Service" loading="lazy">
+              <div>
+                <span class="tp-label">Installed</span>
+                <span class="tp-name">Weekly Premium Service</span>
+              </div>
+            </div>
+            <div class="reviewer">
+              <img class="reviewer-avatar" src="assets/images/reviewer-sarah.jpg" alt="Sarah J." loading="lazy"
+                width="48" height="48">
+              <div class="reviewer-info">
+                <p>Sarah J.</p>
+                <small>Standard Soil · 4 months in</small>
               </div>
             </div>
           </div>
-          <div class="col-lg-6 reveal-right">
-            <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?w=800&q=80" alt="Happy family by swimming pool" class="img-fluid rounded-4 shadow-md w-100" style="height: 300px; object-fit: cover;">
+ 
+          <div class="testimonial-card">
+            <div class="stars">
+              <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+            </div>
+            <blockquote>"The fiberglass shell is beautiful. It is completely smooth on our feet, and the algae-resistant gelcoat is so easy to clean."
+            </blockquote>
+            <div class="testimonial-product">
+              <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?q=80&w=1353&auto=format&fit=crop"
+                alt="Bespoke Fiberglass Shell" loading="lazy">
+              <div>
+                <span class="tp-label">Installed</span>
+                <span class="tp-name">Bespoke Fiberglass Shell</span>
+              </div>
+            </div>
+            <div class="reviewer">
+              <img class="reviewer-avatar" src="assets/images/reviewer-elena.jpg" alt="Elena M." loading="lazy"
+                width="48" height="48">
+              <div class="reviewer-info">
+                <p>Elena M.</p>
+                <small>Sloped Yard · 7 months in</small>
+              </div>
+            </div>
+          </div>
+ 
+          <div class="testimonial-card">
+            <div class="stars">
+              <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+            </div>
+            <blockquote>"Finally, a contractor that handles excavation and automated plumbing under a single price sheet. Speedy construction."
+            </blockquote>
+            <div class="testimonial-product">
+              <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=1287&auto=format&fit=crop"
+                alt="Smart Automation Pack" loading="lazy">
+              <div>
+                <span class="tp-label">Installed</span>
+                <span class="tp-name">Smart Automation Pack</span>
+              </div>
+            </div>
+            <div class="reviewer">
+              <img class="reviewer-avatar" src="assets/images/reviewer-chloe.jpg" alt="Chloe T." loading="lazy"
+                width="48" height="48">
+              <div class="reviewer-info">
+                <p>Chloe T.</p>
+                <small>Rocky Ground · 1 year in</small>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Section 6: Final CTA -->
-    <section class="section-padding position-relative text-center reveal" style="background-image: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.9)), url('https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=1600&q=80'); background-size: cover; background-position: center; background-attachment: fixed;">
-      <div class="container position-relative z-1">
-        <h2 class="text-white display-5 mb-4">Your Dream Swimming Pool Awaits.</h2>
-        <p class="text-white lead mb-5 mx-auto" style="max-width: 600px;">Schedule a free site survey and design consultation. Let's make your backyard dream a reality today.</p>
-        <div class="d-flex justify-content-center gap-3 flex-wrap">
-          <a href="booking.html" class="btn-secondary-brand btn-lg">Book Site Visit</a>
-          <a href="services.html" class="btn-primary-brand btn-lg btn-outline-white">Explore Services</a>
-        </div>
+    <!-- CTA -->
+    <section class="cta-section">
+      <div class="container animate-on-scroll">
+        <span class="eyebrow" style="justify-content: center;">No obligation</span>
+        <h2 style="margin-bottom: var(--space-2);">Not sure what your site needs?</h2>
+        <p class="lead" style="margin: 0 auto var(--space-4); max-width: 560px;">
+          Answer a few questions about your yard access, slope, and soil and our engineering team will detail your plan.
+        </p>
+        <a href="services.html#consultation" class="btn btn-primary btn-lg">
+          Request free yard consult
+        </a>
       </div>
     </section>
+
   </main>
 
-  <!-- Footer -->
-  <div id="global-footer"></div>
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="logo"><img src="assets/images/aquavista-logo.png" alt="AquaVista" style="height: var(--logo-height, 58px); width: auto; display: block;"></a>
+          <p class="text-muted" style="max-width: 300px;">
+            Bespoke fiberglass and custom concrete swimming pool design, excavation, and automated maintenance services.
+          </p>
+          <div class="footer-social">
+            <a href="#" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
+            <a href="#" aria-label="TikTok"><i class="ph ph-tiktok-logo"></i></a>
+            <a href="#" aria-label="Pinterest"><i class="ph ph-pinterest-logo"></i></a>
+            <a href="contact.html" aria-label="Email"><i class="ph ph-envelope-simple"></i></a>
+          </div>
+        </div>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- Custom JS -->
-  <script src="js/components.js"></script>
-  <script src="js/main.js"></script>
+        <div class="footer-col">
+          <h4>Packages</h4>
+          <div class="footer-links">
+            <a href="services.html">All Services</a>
+            <a href="services.html?category=shells">Pool Shells</a>
+            <a href="services.html?category=excavations">Site Preparation</a>
+            <a href="services.html?category=equipment">Pool Equipment</a>
+            <a href="services.html?category=service">Maintenance Care</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Discover</h4>
+          <div class="footer-links">
+            <a href="about.html">Our Story</a>
+            <a href="journal.html">Maintenance Blog</a>
+            <a href="services.html#consultation">Yard Consultation</a>
+            <a href="about.html">Water Chemistry Guide</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Support</h4>
+          <div class="footer-links">
+            <a href="contact.html">Contact Us</a>
+            <a href="contact.html">Terms &amp; Disclaimers</a>
+            <a href="login.html">Your Account</a>
+            <a href="register.html">Create Account</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 AquaVista. All rights reserved.</p>
+        <p>Crafting backyard resorts with civil engineering precision.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/home.js"></script>
 </body>
+
 </html>
