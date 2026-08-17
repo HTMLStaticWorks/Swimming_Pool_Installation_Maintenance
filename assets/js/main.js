@@ -19,7 +19,7 @@ function initTheme() {
   const themeToggles = document.querySelectorAll('.theme-toggle');
   
   // Check local storage or system preference
-  const savedTheme = localStorage.getItem('glowly-theme');
+  const savedTheme = localStorage.getItem('aquavista-theme');
   const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
   
   let currentTheme = 'light';
@@ -36,7 +36,7 @@ function initTheme() {
     toggle.addEventListener('click', () => {
       currentTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
       applyTheme(currentTheme);
-      localStorage.setItem('glowly-theme', currentTheme);
+      localStorage.setItem('aquavista-theme', currentTheme);
     });
   });
 }
@@ -67,7 +67,7 @@ function updateThemeIcons(theme) {
 function initRTL() {
   const rtlToggles = document.querySelectorAll('.rtl-toggle');
   
-  const savedDir = localStorage.getItem('glowly-dir') || 'ltr';
+  const savedDir = localStorage.getItem('aquavista-dir') || 'ltr';
   applyDir(savedDir);
   
   rtlToggles.forEach(toggle => {
@@ -75,7 +75,7 @@ function initRTL() {
       const currentDir = document.documentElement.getAttribute('dir');
       const newDir = currentDir === 'rtl' ? 'ltr' : 'rtl';
       applyDir(newDir);
-      localStorage.setItem('glowly-dir', newDir);
+      localStorage.setItem('aquavista-dir', newDir);
     });
   });
 }

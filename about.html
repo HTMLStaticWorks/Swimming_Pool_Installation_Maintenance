@@ -23,6 +23,7 @@
     .mission-section {
       background: var(--bg-primary);
     }
+
     .timeline {
       position: relative;
       max-width: 800px;
@@ -135,6 +136,7 @@
       padding-right: 50%;
       justify-content: flex-end;
     }
+
     /* Founders — layout comes from the shared .grid-3 utility */
     .founder-card {
       background: var(--bg-card);
@@ -304,13 +306,14 @@
   <header>
     <div class="container">
       <nav class="navbar">
-        <a href="index.html" class="logo"><img src="assets/images/aquavista-logo.png" alt="AquaVista" style="height: var(--logo-height, 58px); width: auto; display: block;"></a>
+        <a href="index.html" class="logo"><img src="assets/images/aquavista-logo.png" alt="AquaVista"
+            style="height: var(--logo-height, 58px); width: auto; display: block;"></a>
         <ul class="nav-links">
           <li><a href="index.html" class="nav-link">Home</a></li>
           <li><a href="home2.html" class="nav-link">Home 2</a></li>
           <li><a href="services.html" class="nav-link">Services</a></li>
           <li><a href="about.html" class="nav-link active">About</a></li>
-          <li><a href="journal.html" class="nav-link">Journal</a></li>
+          <li><a href="journal.html" class="nav-link">Pool Guides</a></li>
           <li><a href="contact.html" class="nav-link">Contact</a></li>
         </ul>
         <div class="nav-actions">
@@ -327,7 +330,8 @@
   <div class="drawer-overlay"></div>
   <div class="drawer">
     <div class="drawer-header">
-      <div class="logo"><img src="assets/images/aquavista-logo.png" alt="AquaVista" style="height: var(--logo-height, 58px); width: auto; display: block;"></div>
+      <div class="logo"><img src="assets/images/aquavista-logo.png" alt="AquaVista"
+          style="height: var(--logo-height, 58px); width: auto; display: block;"></div>
       <button class="drawer-close" aria-label="Close Menu"><i class="ph ph-x"></i></button>
     </div>
     <div class="drawer-links">
@@ -335,7 +339,7 @@
       <a href="home2.html" class="nav-link">Home 2</a>
       <a href="services.html" class="nav-link">Services</a>
       <a href="about.html" class="nav-link active">About</a>
-      <a href="journal.html" class="nav-link">Journal</a>
+      <a href="journal.html" class="nav-link">Pool Guides</a>
       <a href="contact.html" class="nav-link">Contact</a>
     </div>
     <div class="drawer-actions">
@@ -350,28 +354,76 @@
   <main>
     <div class="page-header page-hero-photo">
       <div class="page-hero-media" aria-hidden="true">
-        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200" alt="">
+        <picture>
+          <source media="(max-width: 480px)" srcset="https://alwahaatechnical.com/_next/image?url=%2Fimages%2Fhero%2Fhero-2.jpg&w=3840&q=75">
+          <img src="https://alwahaatechnical.com/_next/image?url=%2Fimages%2Fhero%2Fhero-2.jpg&w=3840&q=75" alt="">
+        </picture>
       </div>
       <div class="container">
         <span class="eyebrow">Our story</span>
         <h1>Pool construction without <span class="text-gradient">secrets.</span></h1>
-        <p class="lead">We believe you have the right to know exactly what engineering specifications are going into your yard, why they're there, and what they cost.</p>
+        <p class="lead">We believe you have the right to know exactly what engineering specifications are going into
+          your yard, why they're there, and what they cost.</p>
       </div>
     </div>
 
-    <!-- MISSION -->
-    <section class="mission-section">
+    <!-- MISSION / PHILOSOPHY -->
+    <section class="philosophy-section">
       <div class="container">
-        <div style="display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-6);">
-          <div style="flex: 1 1 400px;" class="animate-on-scroll">
-            <img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?q=80&w=900" alt="AquaVista installation process" width="900" height="1000"
-              loading="lazy" style="border-radius: var(--radius-soft);">
+        
+        <!-- Centered Section Title -->
+        <div class="section-title animate-on-scroll" style="text-align: center; margin-bottom: var(--space-5);">
+          <span class="eyebrow"><i class="ph ph-shield-check"></i> Integrity Driven</span>
+          <h2>Our Philosophy</h2>
+          <p class="lead" style="max-width: 720px; margin: 0 auto;">
+            At AquaVista, we strip away the industry fluff and empty sales markup. Our installations focus entirely on structural safety and operational efficiency.
+          </p>
+        </div>
+        
+        <div class="philosophy-grid">
+          
+          <!-- Image Column with Glass Badge -->
+          <div class="philosophy-media animate-on-scroll">
+            <div class="philosophy-image-wrap">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWs8q1WtdUQr1Hydp1JJIx08WT6Lhez1wft4W-ncyg8vrW41YjhVYiGYPl&s=10"
+                alt="AquaVista engineering process" width="900" height="1000" loading="lazy">
+              
+              <!-- Floating Glass Badge -->
+              
+            </div>
           </div>
-          <div style="flex: 1 1 400px; text-align: center;" class="animate-on-scroll delay-1">
-            <h2>Our Philosophy</h2>
-            <p>At AquaVista, we strip away the industry fluff and empty sales markup. Our installations are rooted in solid structural engineering, designed for longevity, and focused on maintaining crystal-clear water with energy-efficient equipment.</p>
-            <p>Every component and excavation depth is intentionally planned. If it doesn't serve a clear purpose or guarantee your pool's structural safety, it doesn't make the plan.</p>
+          
+          <!-- Text Column with Pillars -->
+          <div class="philosophy-info animate-on-scroll delay-1">
+            <div class="philosophy-pillars">
+              
+              <div class="philosophy-pillar">
+                <div class="pillar-num">01</div>
+                <div class="pillar-body">
+                  <h3>No Fluff, No Markup</h3>
+                  <p>Every item on your build plan is transparently itemized. We only bill for structural necessity and high-end equipment.</p>
+                </div>
+              </div>
+              
+              <div class="philosophy-pillar">
+                <div class="pillar-num">02</div>
+                <div class="pillar-body">
+                  <h3>Engineering Longevity</h3>
+                  <p>We mandate strict soil load calculations, double steel steel reinforcement, and precision ground leveling.</p>
+                </div>
+              </div>
+              
+              <div class="philosophy-pillar">
+                <div class="pillar-num">03</div>
+                <div class="pillar-body">
+                  <h3>Operational Efficiency</h3>
+                  <p>By pairing energy-saving variable speed pumps with oversized sand filters, we cut your pool utility costs by up to 40%.</p>
+                </div>
+              </div>
+              
+            </div>
           </div>
+          
         </div>
       </div>
     </section>
@@ -381,19 +433,21 @@
         <div class="section-title animate-on-scroll">
           <span class="eyebrow">The people behind it</span>
           <h2>Meet our team</h2>
-          <p>Three industry veterans who got tired of pool builder markup and delayed digs — and decided to print everything transparently.</p>
+          <p>Three industry veterans who got tired of pool builder markup and delayed digs — and decided to print
+            everything transparently.</p>
         </div>
 
         <div class="founders-grid grid-3">
           <article class="founder-card animate-on-scroll">
             <div class="founder-photo">
-              <img src="assets/images/founder-amara-okafor.jpg" alt="Dave Miller, AquaVista lead civil engineer"
+              <img src="https://mahamayaeng.co.in/wp-content/uploads/2025/03/team2.jpg" alt="David Miller, AquaVista lead civil engineer"
                 width="800" height="1000" loading="lazy">
             </div>
             <div class="founder-body">
               <span class="founder-role">Lead Civil Engineer</span>
               <h3>Dave Miller</h3>
-              <p>Professional structural engineer with 15 years in civil ground works, overseeing every shell excavation plan.</p>
+              <p>Professional structural engineer with 15 years in civil ground works, overseeing every shell excavation
+                plan.</p>
               <p class="founder-quote">"If we can't verify the load calculation, we don't dig. Simple as that."</p>
               <div class="founder-foot">
                 <span class="badge badge-neutral">Civil Engineering</span>
@@ -407,14 +461,16 @@
 
           <article class="founder-card animate-on-scroll delay-1">
             <div class="founder-photo">
-              <img src="assets/images/founder-lina-persson.jpg"
-                alt="Sarah Jenkins, AquaVista construction manager" width="800" height="1000" loading="lazy">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwA9o4PkwF9frTEpipDFFCsA5Eo85ohRsplsoYwWLdquIwGNuIbR-miuJr&s=10" alt="Sarah Jenkins, AquaVista construction manager"
+                width="800" height="1000" loading="lazy">
             </div>
             <div class="founder-body">
               <span class="founder-role">Construction Manager</span>
               <h3>Sarah Jenkins</h3>
-              <p>Coordinates excavation equipment, plumbing crews, and fiberglass deliveries to ensure dig days run on time.</p>
-              <p class="founder-quote">"A good build is the result of strict planning and experienced crew coordination."</p>
+              <p>Coordinates excavation equipment, plumbing crews, and fiberglass deliveries to ensure dig days run on
+                time.</p>
+              <p class="founder-quote">"A good build is the result of strict planning and experienced crew
+                coordination."</p>
               <div class="founder-foot">
                 <span class="badge badge-neutral">Site Logistics</span>
                 <div class="founder-social">
@@ -427,14 +483,16 @@
 
           <article class="founder-card animate-on-scroll delay-2">
             <div class="founder-photo">
-              <img src="assets/images/founder-rhea-kapoor.jpg" alt="Marcus Chen, AquaVista water care advisor"
+              <img src="https://www.nspe.org/sites/default/files/2024-12/GettyImages-1059662440%20%281%29%20copy.jpg" alt="Marcus Chen, AquaVista water care advisor"
                 width="800" height="1000" loading="lazy">
             </div>
             <div class="founder-body">
               <span class="founder-role">Water Care Advisor</span>
               <h3>Marcus Chen</h3>
-              <p>Sets up automated filtration systems and provides chemical maintenance schedules tailored to your yard's environment.</p>
-              <p class="founder-quote">"Clean water is a matter of correct flow engineering and simple weekly prevention, not magic chemicals."</p>
+              <p>Sets up automated filtration systems and provides chemical maintenance schedules tailored to your
+                yard's environment.</p>
+              <p class="founder-quote">"Clean water is a matter of correct flow engineering and simple weekly
+                prevention, not magic chemicals."</p>
               <div class="founder-foot">
                 <span class="badge badge-neutral">Water Chemistry</span>
                 <div class="founder-social">
@@ -449,7 +507,7 @@
     </section>
 
     <!-- TIMELINE -->
-    
+
 
   </main>
 
@@ -458,7 +516,8 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-col">
-          <a href="index.html" class="logo"><img src="assets/images/aquavista-logo.png" alt="AquaVista" style="height: var(--logo-height, 58px); width: auto; display: block;"></a>
+          <a href="index.html" class="logo"><img src="assets/images/aquavista-logo.png" alt="AquaVista"
+              style="height: var(--logo-height, 58px); width: auto; display: block;"></a>
           <p class="text-muted" style="max-width: 300px;">
             Bespoke fiberglass and custom concrete swimming pool design, excavation, and automated maintenance services.
           </p>
@@ -485,7 +544,7 @@
           <h4>Discover</h4>
           <div class="footer-links">
             <a href="about.html">Our Story</a>
-            <a href="journal.html">Maintenance Blog</a>
+            <a href="journal.html">Pool Guides</a>
             <a href="services.html#consultation">Yard Consultation</a>
             <a href="about.html">Water Chemistry Guide</a>
           </div>
@@ -511,4 +570,5 @@
 
   <script src="assets/js/main.js"></script>
 </body>
+
 </html>

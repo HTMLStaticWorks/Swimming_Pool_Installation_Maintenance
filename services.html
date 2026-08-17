@@ -704,7 +704,7 @@
     }
 
     /* --- Responsive --- */
-    @media (max-width: 1024px) {
+    @media (max-width: 991px) {
       .category-rail {
         grid-template-columns: repeat(2, 1fr);
       }
@@ -796,20 +796,21 @@
       }
     }
   </style>
-</head<body>
+  </head<body>
 
   <!-- HEADER -->
   <header>
     <div class="container">
       <nav class="navbar">
-        <a href="index.html" class="logo"><img src="assets/images/aquavista-logo.png" alt="AquaVista" style="height: var(--logo-height, 58px); width: auto; display: block;"></a>
+        <a href="index.html" class="logo"><img src="assets/images/aquavista-logo.png" alt="AquaVista"
+            style="height: var(--logo-height, 58px); width: auto; display: block;"></a>
 
         <ul class="nav-links">
           <li><a href="index.html" class="nav-link">Home</a></li>
           <li><a href="home2.html" class="nav-link">Home 2</a></li>
           <li><a href="services.html" class="nav-link active">Services</a></li>
           <li><a href="about.html" class="nav-link">About</a></li>
-          <li><a href="journal.html" class="nav-link">Journal</a></li>
+          <li><a href="journal.html" class="nav-link">Pool Guides</a></li>
           <li><a href="contact.html" class="nav-link">Contact</a></li>
         </ul>
 
@@ -834,7 +835,8 @@
   <div class="drawer-overlay"></div>
   <div class="drawer">
     <div class="drawer-header">
-      <div class="logo"><img src="assets/images/aquavista-logo.png" alt="AquaVista" style="height: var(--logo-height, 58px); width: auto; display: block;"></div>
+      <div class="logo"><img src="assets/images/aquavista-logo.png" alt="AquaVista"
+          style="height: var(--logo-height, 58px); width: auto; display: block;"></div>
       <button class="drawer-close" aria-label="Close Menu">
         <i class="ph ph-x"></i>
       </button>
@@ -845,7 +847,7 @@
       <a href="home2.html" class="nav-link">Home 2</a>
       <a href="services.html" class="nav-link active">Services</a>
       <a href="about.html" class="nav-link">About</a>
-      <a href="journal.html" class="nav-link">Journal</a>
+      <a href="journal.html" class="nav-link">Pool Guides</a>
       <a href="contact.html" class="nav-link">Contact</a>
     </div>
 
@@ -867,21 +869,21 @@
     <!-- HERO -->
     <div class="products-hero page-hero-photo">
       <div class="page-hero-media" aria-hidden="true">
-        <img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?q=80&w=1200" alt="">
+        <picture>
+          <source media="(max-width: 480px)" srcset="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=600&h=750&q=80">
+          <img src="https://www.brightonpools.com/wp-content/uploads/2022/04/C77C2DB4-400D-48B7-A5B7-F09C40751F4D.jpeg"
+            alt="">
+        </picture>
       </div>
       <div class="container">
         <span class="eyebrow">The full catalog</span>
-        <h1>Pool solutions you can<br><span class="text-gradient">rely on for life</span></h1>
+        <h1>Pool solutions you can<br><span class="">on for life</span></h1>
         <p class="lead">
-          Considered engineering options across pool shells, site prep, filtration equipment, and maintenance plans — every component listed with its technical details and materials.
+          Considered engineering options across pool shells, site prep, filtration equipment, and maintenance plans —
+          every component listed with its technical details and materials.
         </p>
 
-        <div class="hero-stats">
-          <span class="hero-stat"><i class="ph ph-blueprint"></i> Full specs on every item</span>
-          <span class="hero-stat"><i class="ph ph-shield-check"></i> Lifetime structural warranty</span>
-          <span class="hero-stat"><i class="ph ph-certificate"></i> Fully licensed &amp; insured</span>
-          <span class="hero-stat"><i class="ph ph-chat-circle-dots"></i> Free site survey consult</span>
-        </div>
+        
       </div>
     </div>
 
@@ -896,7 +898,8 @@
 
         <div class="category-rail animate-on-scroll delay-1">
           <button class="category-jump" data-category="shells" aria-label="Filter by pool shells">
-            <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?q=80&w=400" alt="Pool Shells" width="400" height="400" loading="lazy">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkElrKbcDwv1jPr6M6nk0DVbLFYJKw9XQYCG4wC3fEe3H1w3pjs6NWvkdq&s=10" alt="Pool Shells"
+              width="400" height="400" loading="lazy">
             <span class="cat-body">
               <span class="cat-name">Pool Shells</span>
               <span class="cat-count"><i class="ph ph-waves"></i> 3 designs</span>
@@ -904,7 +907,8 @@
           </button>
 
           <button class="category-jump" data-category="excavations" aria-label="Filter by excavations">
-            <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=400" alt="Site Prep" width="400" height="400" loading="lazy">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZCWj7z8OdCweuWRtpdWQSCuyR8nEc7xSBlX50DWkg96-SOH-UN0CiMACY&s=10" alt="Site Prep"
+              width="400" height="400" loading="lazy">
             <span class="cat-body">
               <span class="cat-name">Site Prep</span>
               <span class="cat-count"><i class="ph ph-shovel"></i> 4 packages</span>
@@ -912,7 +916,8 @@
           </button>
 
           <button class="category-jump" data-category="equipment" aria-label="Filter by pool equipment">
-            <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=400" alt="Pool Equipment" width="400" height="400" loading="lazy">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsBvyFInAytcbW0qa9wGEusrbh-oOTA-C4iTNdwm0E4m4oWBhInmGB9NNC&s=10" alt="Pool Equipment"
+              width="400" height="400" loading="lazy">
             <span class="cat-body">
               <span class="cat-name">Pool Equipment</span>
               <span class="cat-count"><i class="ph ph-wrench"></i> 3 models</span>
@@ -920,7 +925,8 @@
           </button>
 
           <button class="category-jump" data-category="service" aria-label="Filter by maintenance plans">
-            <img src="https://images.unsplash.com/photo-1518156677180-95a2893f3e9f?q=80&w=400" alt="Pool Maintenance" width="400" height="400" loading="lazy">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuDWAWLHer0Zmlc6BqKZPckJOJJPS38ZZCGjhWc-biroVPIX7UiNijmg4t&s=10" alt="Pool Maintenance"
+              width="400" height="400" loading="lazy">
             <span class="cat-body">
               <span class="cat-name">Maintenance Care</span>
               <span class="cat-count"><i class="ph ph-calendar-check"></i> 2 plans</span>
@@ -939,8 +945,8 @@
           <div class="toolbar-top">
             <div class="search-field">
               <i class="ph ph-magnifying-glass"></i>
-              <input type="search" id="productSearch" class="form-control" placeholder="Search specifications or materials…"
-                aria-label="Search catalog">
+              <input type="search" id="productSearch" class="form-control"
+                placeholder="Search specifications or materials…" aria-label="Search catalog">
             </div>
 
             <div class="toolbar-select">
@@ -1022,7 +1028,8 @@
             <span class="eyebrow" style="justify-content: center;">Material Integrity</span>
             <h2>No hidden construction fees.<br>No material compromises.</h2>
             <p class="lead" style="margin-top: var(--space-3);">
-              Every AquaVista project publishes its complete engineering specification, pump power ratings, and filtration microns up front. If a component isn't structurally necessary, we don't bill you for it.
+              Every AquaVista project publishes its complete engineering specification, pump power ratings, and
+              filtration microns up front. If a component isn't structurally necessary, we don't bill you for it.
             </p>
             <div
               style="margin-top: var(--space-4); display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
@@ -1054,13 +1061,7 @@
                 <p>We calibrate every new pool fill to pH 7.4 to protect the shell, plumbing fittings, and swimmers.</p>
               </div>
             </div>
-            <div class="promise">
-              <div class="promise-icon"><i class="ph ph-test-tube"></i></div>
-              <div>
-                <h4>Soil survey guidance included</h4>
-                <p>Each site visit details ground profiles and identifies rock, sand, or clay limits before dig day.</p>
-              </div>
-            </div>
+
           </div>
         </div>
       </div>
@@ -1076,15 +1077,21 @@
             <span class="eyebrow" style="justify-content: center;">Free consultation</span>
             <h2>Book a Free Yard Survey</h2>
             <p class="lead" style="margin-top: var(--space-3); max-width: 600px;">
-              Tell us about your property and our engineering team will build a pool installation plan from the options above — including excavation layout and equipment placement.
+              Tell us about your property and our engineering team will build a pool installation plan from the options
+              above — including excavation layout and equipment placement.
             </p>
 
             <div class="consult-points">
-              <div class="consult-point"><i class="ph ph-check-circle"></i> A written excavation and build timeline</div>
-              <div class="consult-point"><i class="ph ph-check-circle"></i> Honest advice on equipment you don't need</div>
-              <div class="consult-point"><i class="ph ph-check-circle"></i> Utility &amp; access conflicts flagged early</div>
-              <div class="consult-point"><i class="ph ph-check-circle"></i> Tailored options based on yard soil &amp; slope</div>
-              <div class="consult-point"><i class="ph ph-check-circle"></i> A site survey response within two working days</div>
+              <div class="consult-point"><i class="ph ph-check-circle"></i> A written excavation and build timeline
+              </div>
+              <div class="consult-point"><i class="ph ph-check-circle"></i> Honest advice on equipment you don't need
+              </div>
+              <div class="consult-point"><i class="ph ph-check-circle"></i> Utility &amp; access conflicts flagged early
+              </div>
+              <div class="consult-point"><i class="ph ph-check-circle"></i> Tailored options based on yard soil &amp;
+                slope</div>
+              <div class="consult-point"><i class="ph ph-check-circle"></i> A site survey response within two working
+                days</div>
             </div>
           </div>
 
@@ -1108,7 +1115,8 @@
             <div class="form-group">
               <span class="form-label">Your yard ground type</span>
               <div class="choice-group">
-                <label class="choice"><input type="radio" name="skinType" value="soil" checked><span><i class="ph ph-drop"></i>
+                <label class="choice"><input type="radio" name="skinType" value="soil" checked><span><i
+                      class="ph ph-drop"></i>
                     Standard Soil</span></label>
                 <label class="choice"><input type="radio" name="skinType" value="rock"><span><i class="ph ph-wind"></i>
                     Rocky Ground</span></label>
@@ -1122,18 +1130,17 @@
             <div class="form-group">
               <span class="form-label">What is your primary pool design goal?</span>
               <div class="choice-group">
-                <label class="choice"><input type="checkbox" name="concerns" value="recreation"><span>Family Recreation</span></label>
-                <label class="choice"><input type="checkbox" name="concerns" value="aesthetic"><span>Luxury Design</span></label>
-                <label class="choice"><input type="checkbox" name="concerns" value="exercise"><span>Lap Swimming</span></label>
+                <label class="choice"><input type="checkbox" name="concerns" value="recreation"><span>Family
+                    Recreation</span></label>
+                <label class="choice"><input type="checkbox" name="concerns" value="aesthetic"><span>Luxury
+                    Design</span></label>
+                <label class="choice"><input type="checkbox" name="concerns" value="exercise"><span>Lap
+                    Swimming</span></label>
                 <label class="choice"><input type="checkbox" name="concerns" value="easy"><span>Low Care</span></label>
               </div>
             </div>
 
-            <div class="form-group">
-              <label class="form-label" for="cRoutine">Yard Layout &amp; Access Details</label>
-              <textarea id="cRoutine" class="form-control"
-                placeholder="Tell us about your gate width, slope, overhead powerlines, or easements."></textarea>
-            </div>
+
 
             <button type="submit" class="btn btn-primary btn-block">
               Request site survey
@@ -1163,7 +1170,8 @@
       </div>
 
       <p class="text-muted" style="font-size: 0.92rem; margin-bottom: var(--space-3);">
-        Questions about site access, ground shoring, or pump specifications? Send them over — a design engineer answers, not a bot.
+        Questions about site access, ground shoring, or pump specifications? Send them over — a design engineer answers,
+        not a bot.
       </p>
 
       <form id="enquiryForm" novalidate>
@@ -1205,7 +1213,8 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-col">
-          <a href="index.html" class="logo"><img src="assets/images/aquavista-logo.png" alt="AquaVista" style="height: var(--logo-height, 58px); width: auto; display: block;"></a>
+          <a href="index.html" class="logo"><img src="assets/images/aquavista-logo.png" alt="AquaVista"
+              style="height: var(--logo-height, 58px); width: auto; display: block;"></a>
           <p class="text-muted" style="max-width: 300px;">
             Bespoke fiberglass and custom concrete swimming pool design, excavation, and automated maintenance services.
           </p>
@@ -1232,7 +1241,7 @@
           <h4>Discover</h4>
           <div class="footer-links">
             <a href="about.html">Our Story</a>
-            <a href="journal.html">Maintenance Blog</a>
+            <a href="journal.html">Pool Guides</a>
             <a href="services.html#consultation">Yard Consultation</a>
             <a href="about.html">Water Chemistry Guide</a>
           </div>
@@ -1256,7 +1265,29 @@
     </div>
   </footer>
 
+  <script>
+    // ==========================================
+    // CATALOGUE SERVICE IMAGES CONFIGURATION
+    // Simply change the image URLs/paths below to swap the catalogue images.
+    // ==========================================
+    const SERVICE_IMAGES = {
+      fiberglassShell: 'https://sc04.alicdn.com/kf/H1e0f265dbf2741e2ad77645ad9958c92q.jpg', // Bespoke Fiberglass Shell
+      concreteShell: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVxf2RWNJt1fOWpfnEYR_kbqFvYepNutrJEj5_7POuPRp0E5gGN0vJHU4&s=10', // Concrete Custom Shell
+      plungeShell: 'https://image.made-in-china.com/202f0j00JNSMFmQytPqs/FRP-Outdoor-SPA-Pool-Small-Fiberglass-Plunge-Swimming-Pool-Shell-Customize-Rectangle-Inground-Family-Swimming-Pool.webp', // Compact Plunge Shell
+      soilExc: 'https://www.squeezeemin.com.au/work/extra-pool-dig.jpg', // Soil Excavation
+      rockExc: 'https://www.jdesigns.com/hubfs/Pool_Excavation_Challenges_Rock_Featured.jpg', // Rock Excavation
+      slopeExc: 'https://www.stefanoslandscaping.com/wp-content/uploads/2025/01/IMG_3738-scaled.webp', // Slope Excavation
+      narrowExc: 'https://kangex.com.au/wp-content/uploads/2020/01/Pool-at-Dutruc-St-2.jpg', // Narrow Excavation
+      sandFilter: 'https://m.media-amazon.com/images/I/814WEDD6F9L.jpg', // Sand Filter
+      ecoPump: 'https://images.ctfassets.net/4khkh4jw49r9/4eu0ccV20QwEeQGVGyrf4u/86858d076890dbbfe6866e0a4e4d1111/how-to-prime-pool-pump.jpg', // ECO Pump
+      roboCleaner: 'https://www.swimmingpoolkitsdirect.com.au/hubfs/aiper-official-KIjRDKJO5bo-unsplash-min-2.webp', // Robotic Cleaner
+      basicSeason: 'https://poolburg.com/wp-content/uploads/2026/03/unnamed-28_11zon.jpg', // Seasonal Open/Close
+      weeklyCare: 'https://poolman360.com/wp-content/uploads/2026/05/Acid-Wash-400.jpg' // Weekly Premium Service
+    };
+  </script>
+
   <script src="assets/js/main.js"></script>
   <script src="assets/js/products.js"></script>
-</body>
+  </body>
+
 </html>
