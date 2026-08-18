@@ -53,6 +53,21 @@
       display: flex;
       justify-content: center;
       gap: var(--space-2);
+      width: 100%;
+    }
+
+    .hero-split-actions .btn {
+      flex: 1 1 200px;
+      max-width: 280px;
+      justify-content: center;
+      text-align: center;
+    }
+
+    @media (max-width: 640px) {
+      .hero-split-actions .btn {
+        flex: 1 1 100%;
+        max-width: 320px;
+      }
     }
 
     /* Real <img> rather than a CSS background: it gets alt text,
@@ -205,6 +220,21 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: var(--space-2);
+      width: 100%;
+    }
+
+    .cta-actions .btn {
+      flex: 1 1 200px;
+      max-width: 280px;
+      justify-content: center;
+      text-align: center;
+    }
+
+    @media (max-width: 640px) {
+      .cta-actions .btn {
+        flex: 1 1 100%;
+        max-width: 320px;
+      }
     }
 
     /* Ritual builder (interactive) */
@@ -293,17 +323,18 @@
 
     .step-tab-meta {
       display: block;
-      font-size: 0.65rem;
+      font-size: 0.78rem;
+      font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      color: var(--text-faint);
+      color: var(--text-muted);
     }
 
     .step-tab-label {
       display: block;
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: var(--text-muted);
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--text-main);
     }
 
     /* Active State */
@@ -317,6 +348,10 @@
       color: #fff;
     }
 
+    .step-tab.active .step-tab-meta {
+      color: var(--color-accent);
+    }
+
     .step-tab.active .step-tab-label {
       color: var(--color-accent);
     }
@@ -324,6 +359,10 @@
     /* Completed State */
     .step-tab.completed .step-tab-icon {
       background: var(--color-sage-soft);
+      color: var(--color-sage);
+    }
+
+    .step-tab.completed .step-tab-meta {
       color: var(--color-sage);
     }
 
@@ -372,10 +411,11 @@
     }
 
     .ritual-step-meta {
-      font-size: 0.72rem;
+      font-size: 0.85rem;
+      font-weight: 700;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--text-faint);
+      color: var(--text-muted);
       display: block;
       margin-bottom: 2px;
     }
@@ -496,11 +536,20 @@
 
     .ritual-nav-buttons {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
+      gap: var(--space-2);
       border-top: 1px solid var(--border-color);
       padding-top: var(--space-4);
       margin-top: var(--space-4);
+      width: 100%;
+    }
+
+    .ritual-nav-buttons .btn {
+      flex: 1 1 130px;
+      max-width: 180px;
+      justify-content: center;
+      text-align: center;
     }
 
     /* Summary Panel */
@@ -518,9 +567,9 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-size: 0.82rem;
-      font-weight: 700;
-      color: var(--text-muted);
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--text-main);
       margin-bottom: 8px;
     }
 
