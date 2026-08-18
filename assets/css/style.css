@@ -890,7 +890,7 @@ html[dir="rtl"] .drawer.active {
   display: flex;
   flex-direction: column;
   gap: 4px;
-  margin-bottom: var(--space-5);
+  margin-bottom: var(--space-3);
 }
 
 .drawer-links .nav-link {
@@ -902,15 +902,15 @@ html[dir="rtl"] .drawer.active {
 }
 
 .drawer-actions {
-  margin-top: auto;
+  margin-top: var(--space-3);
   display: flex;
   flex-direction: column;
-  gap: var(--space-3);
+  gap: var(--space-2);
 }
 
 .drawer-actions .nav-actions {
   justify-content: flex-start;
-  margin-bottom: var(--space-2);
+  margin-bottom: 0;
 }
 
 /* =========================================================
